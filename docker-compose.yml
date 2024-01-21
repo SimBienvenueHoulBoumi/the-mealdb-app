@@ -25,6 +25,7 @@ services:
     volumes:
       - ./meal-db/initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
       - ./meal-db/pgdata:/var/lib/postgresql/data
+      - ./meal-db/pgadmin:/var/lib/postgresql/admin
 
   dbadmin:
     container_name: pgadmin
