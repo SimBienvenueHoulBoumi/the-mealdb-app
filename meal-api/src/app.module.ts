@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import configuration from './config/configuration';
 import { ConfigModule } from '@nestjs/config';
+import { MealsModule } from './meals/meals.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ConfigModule } from '@nestjs/config';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    MealsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

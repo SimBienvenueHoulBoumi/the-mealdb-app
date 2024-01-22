@@ -2,9 +2,9 @@
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" -d "$POSTGRES_DB" <<-EOSQL
     CREATE SCHEMA IF NOT EXISTS public;
-    CREATE TABLE public.meals (
+    CREATE TABLE public.meal (
         id SERIAL PRIMARY KEY,
-        mealID TEXT NOT NULL,
+        mealId TEXT NOT NULL,
         quantity INTEGER NOT NULL,
         unit_price FLOAT NOT NULL
     );
