@@ -1,4 +1,2 @@
-meal-db/data/**
-meal-db/pgdata/**
-pgadmin/**
+data/**
 .env

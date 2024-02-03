@@ -19,15 +19,15 @@ export class MealsService {
     return this.mealRepository.find();
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.mealRepository.findBy({ id: id });
   }
 
-  update(id: number, updateMealDto: UpdateMealDto) {
+  update(id: string, updateMealDto: UpdateMealDto) {
     return this.mealRepository.update({ id: id }, updateMealDto);
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return this.mealRepository.delete({ id: id });
   }
 }
