@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { SigninComponent } from './auth/signin/signin.component';
-import { RegisterComponent } from './auth/register/register.component';
 
 export const routes: Routes = [
   {
@@ -13,26 +12,8 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'auth',
-    children: [
-      {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full',
-      },
-      {
-        path: 'login',
-        component: SigninComponent,
-      },
-      {
-        path: 'register',
-        component: RegisterComponent,
-      },
-      {
-        path: '**',
-        redirectTo: '/login',
-      },
-    ],
+    path: 'auth/login',
+    component: SigninComponent,
   },
   {
     path: 'dashboard',
@@ -50,11 +31,7 @@ export const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
-      },
-      {
-        path: '**',
-        redirectTo: '/catalogue',
-      },
+      }
     ],
   },
   {

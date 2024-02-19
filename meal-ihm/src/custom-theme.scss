@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// Définition des couleurs personnalisées
+$custom-orange: mat.define-palette(mat.$orange-palette);
+$custom-grey: mat.define-palette(mat.$grey-palette);
+$custom-light-blue: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+
+// Définition du thème personnalisé
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $custom-orange,
+    accent: $custom-light-blue,
+    warn: $custom-grey,
+  )
+));
+
+// Inclusion du thème personnalisé pour tous les composants
+@include mat.all-component-themes($custom-theme);
