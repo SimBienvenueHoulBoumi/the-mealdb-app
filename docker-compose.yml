@@ -14,21 +14,6 @@ services:
     networks:
       - meal_network
 
-  dbadmin:
-    container_name: pgadmin-meal
-    image: dpage/pgadmin4
-    restart: always
-    depends_on:
-      - db
-    ports:
-      - 5080:80
-    env_file:
-      - .env
-    volumes:
-      - ./data/pgadmin:/var/lib/pgadmin
-    networks:
-      - meal_network
-
   api:
     container_name: meal-api
     build:
