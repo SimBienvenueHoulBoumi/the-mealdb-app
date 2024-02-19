@@ -31,4 +31,12 @@ export class AuthService {
         this.router.navigate(['/dashboard']);
       });
   }
+
+  authenticate(): boolean {
+    if (typeof localStorage !== 'undefined') {
+      const token = localStorage.getItem('token');
+      return !!token; // Utilisation de la double négation pour convertir la valeur en un booléen
+    }
+    return false; // Retourne false si localStorage n'est pas pris en charge
+  }
 }
