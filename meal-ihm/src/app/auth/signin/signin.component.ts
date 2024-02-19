@@ -17,7 +17,7 @@ export class SigninComponent {
   authService = inject(AuthService);
 
   authForm = new FormGroup({
-    email: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl(''),
   });
 
