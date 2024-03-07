@@ -7,7 +7,7 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'postgres',
-        host: "db",
+        host: configuration().database.host,
         port: configuration().database.port,
         username: configuration().database.username,
         password: configuration().database.password,
